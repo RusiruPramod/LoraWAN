@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import {
   Thermometer, Droplets, FlaskConical, Atom, Leaf, ArrowRight, Zap,
+  Sunrise, Sun, Sunset, Moon,
 } from "lucide-react";
 import PageHeader from "../components/PageHeader";
 import ConditionCard from "../components/ConditionCard";
@@ -47,11 +48,29 @@ const CONDITION_CARDS = [
   },
 ];
 
+const getGreetingInfo = () => {
+  const hour = new Date().getHours();
+  if (hour < 12) {
+    return { text: "Good morning", Icon: Sunrise, color: "text-amber-500" };
+  }
+  if (hour < 17) {
+    return { text: "Good afternoon", Icon: Sun, color: "text-amber-500" };
+  }
+  if (hour < 21) {
+    return { text: "Good evening", Icon: Sunset, color: "text-orange-500" };
+  }
+  return { text: "Good evening", Icon: Moon, color: "text-indigo-400" };
+};
+
 export default function Dashboard() {
   const { user } = useAuth();
-  const hour = new Date().getHours();
-  const greeting =
-    hour < 12 ? "Good morning 👋" : hour < 17 ? "Good afternoon 👋" : "Good evening 👋";
+  const { text, Icon, color } = getGreetingInfo();
+  const greeting = (
+    <span className="inline-flex items-center gap-2">
+      <span>{text}</span>
+      <Icon className={`w-6 h-6 ${color}`} />
+    </span>
+  );
 
   return (
     <div className="space-y-6">
