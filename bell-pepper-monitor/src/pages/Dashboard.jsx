@@ -99,7 +99,7 @@ export default function Dashboard() {
       {/* ── Plant Health Hero ── */}
       <div
         className="relative overflow-hidden rounded-2xl border-0 shadow-md"
-        style={{ background: "linear-gradient(135deg, #16a34a 0%, #166534 100%)" }}
+        style={{ background: "linear-gradient(135deg, #16a34a 0%, #166534 55%)" }}
       >
         <div className="flex flex-col sm:flex-row items-stretch min-h-[220px]">
 
