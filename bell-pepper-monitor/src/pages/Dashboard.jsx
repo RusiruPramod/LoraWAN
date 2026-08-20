@@ -123,7 +123,7 @@ export default function Dashboard() {
           </div>
 
           {/* Right: Greenhouse image */}
-          <div className="relative w-full sm:w-72 md:w-96 flex-shrink-0 min-h-[200px] sm:min-h-0">
+          <div className="relative w-full sm:w-72 md:w-[26rem] lg:w-[28rem] flex-shrink-0 min-h-[200px] sm:min-h-0">
             {/* Gradient fade on left edge to blend into green */}
             <div
               className="absolute inset-y-0 left-0 w-16 z-10 pointer-events-none"
